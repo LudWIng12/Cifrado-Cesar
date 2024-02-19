@@ -9,7 +9,8 @@ function cifradoCesar(texto, desplazamiento) {
             let indiceActual = alfabeto.indexOf(caracter.toLowerCase());
 
             if (indiceActual !== -1) { // Si el caracter está en el alfabeto
-                let indiceCifrado = (indiceActual + desplazamiento) % alfabeto.length;
+                // Ajustamos el desplazamiento para que siempre sea positivo
+                let indiceCifrado = (indiceActual + desplazamiento + alfabeto.length) % alfabeto.length;
                 let caracterCifrado = alfabeto[indiceCifrado];
                 resultado += esMayuscula ? caracterCifrado.toUpperCase() : caracterCifrado;
             } else {
@@ -21,6 +22,7 @@ function cifradoCesar(texto, desplazamiento) {
     }
     return resultado;
 }
+
 
 function encryptText() {
     var inputText = document.getElementById("inputText").value;
