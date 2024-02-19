@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f8ff; /* Color de fondo azul pastel */
+}
+
+h1 {
+    color: #003366; /* Un tono más oscuro de azul para el título */
+}
+
+textarea, input {
+    width: 300px; /* Ancho fijo para textarea e input */
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #ffcccc; /* Borde rojo pastel */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+}
+
+textarea {
+    height: 100px; /* Altura fija para el área de texto */
+}
+
+input {
+    height: 40px; /* Altura para el input de desplazamiento */
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Color verde para los botones */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Un verde un poco más oscuro al pasar el ratón */
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffcccc; /* Fondo rojo pastel para el resultado */
+    color: #003366; /* Texto en azul oscuro para contraste */
+    width: 300px; /* Ancho fijo para mantener consistencia */
+    text-align: center;
+}
