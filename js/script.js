@@ -1,27 +1,20 @@
 function cifradoCesar(texto, desplazamiento) {
-    const alfabeto = 'abcdefghijklmnñopqrstuvwxyz';
+    const alfabeto = '!#$%&()*+,-./:;<>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{|}éÉáíóúñÑ¿ÁÍÓÚ0123456789';
     let resultado = '';
 
-    // Ajustar el desplazamiento para casos negativos
+    // Ajustar el desplazamiento para casos negativos y positivos
     desplazamiento = (desplazamiento % alfabeto.length + alfabeto.length) % alfabeto.length;
 
     for (let i = 0; i < texto.length; i++) {
         const caracter = texto[i];
-        // Checar si el caracter es una letra y está en el alfabeto (ignorando mayúsculas/minúsculas)
-        if (caracter.toLowerCase() !== caracter.toUpperCase()) {
-            const esMayuscula = caracter === caracter.toUpperCase();
-            let indiceActual = alfabeto.indexOf(caracter.toLowerCase());
+        let indiceActual = alfabeto.indexOf(caracter);
 
-            if (indiceActual !== -1) { // Si el caracter está en el alfabeto
-                let indiceCifrado = (indiceActual + desplazamiento) % alfabeto.length;
-                let caracterCifrado = alfabeto[indiceCifrado];
-                resultado += esMayuscula ? caracterCifrado.toUpperCase() : caracterCifrado;
-            } else {
-                // Añadir el caracter tal cual si no está en el alfabeto
-                resultado += caracter;
-            }
+        if (indiceActual !== -1) { // Si el caracter está en el alfabeto
+            let indiceCifrado = (indiceActual + desplazamiento) % alfabeto.length;
+            let caracterCifrado = alfabeto[indiceCifrado];
+            resultado += caracterCifrado;
         } else {
-            // Añadir el caracter tal cual si no es una letra
+            // Añadir el caracter tal cual si no está en el alfabeto
             resultado += caracter;
         }
     }
